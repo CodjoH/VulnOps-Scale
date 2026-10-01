@@ -1,0 +1,17 @@
+# --- SÉCURITÉ : Bloquer les secrets et clés Nessus ---
+.env
+key.env
+
+# --- PROPRETÉ : Ignorer l'environnement Python et fichiers temporaires ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+mon_env/
+
+
+# --- LIVRABLES LOCAUX : Ignorer tes rapports de test ---
+vulnops_triage_output.json
+vulnops_velocity_metrics.json
+vulnops_dashboard.html
