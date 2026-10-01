@@ -1,0 +1,8 @@
+```json
+{
+    "total_critical_high_vulns": 13,
+    "autonomous_eligible_vulns": 13,
+    "absorption_rate_percent": 100.0,
+    "triage_velocity_seconds": 0.1438
+}
+```

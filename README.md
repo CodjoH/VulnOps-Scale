@@ -9,18 +9,18 @@ En s'appuyant directement sur l'API de **Tenable Nessus**, ce moteur convertit d
 
 ## 🎯 Objectifs du Projet
 
-- 🔄 **Automatisation API :** Interroger Nessus Essentials en direct sans intervention humaine.
-- 📊 **Calcul de la Patch Velocity :** Mesurer le temps d'arbitrage (en millisecondes) et le volume de traitement.
-- ⚡ **Taux d'Absorption :** Isoler 100% des vulnérabilités d'OS éligibles à un auto-patching immédiat.
+- 🔄 **Automatisation API :** Interroger Nessus Essentials en direct sans intervention humaine
+- 📊 **Calcul de la Patch Velocity :** Mesurer le temps d'arbitrage (en millisecondes) et le volume de traitement
+- ⚡ **Taux d'Absorption :** Isoler 100% des vulnérabilités d'OS éligibles à un auto-patching immédiat
 
 ## 🏗️ Technical Stack
 
 - **Vulnerability Management :** Tenable Nessus Essentials
 - **Orchestrateur & Triage :** Python 3 (Requests, Dotenv)
-- **Environnement de Contrôle :** Debian Linux
-- **Cibles Évaluées :** Linux (Lin-01) & Windows (WIN-01)
+- **Environnement de Contrôle :** Debian 
+- **Environnements évalués :** Linux & Windows
 
-## 🔗 Architecture du Pipeline
+
 
 ## 🏗️ Architecture du Pipeline VulnOps-Scale
 
@@ -54,19 +54,22 @@ graph TD
 
 
 
-## 🔍 Preuve de Concept & Résultats (Données Réelles)
+## 🔍 Preuve de Concept & Résultats 
+![Nessus](docs/Tenable.login.jpg)
 
-### 🔹 Évaluation de l'Infrastructure Linux (`Lin-01`)
-Lors de l'exécution du pipeline sur notre infrastructure Linux réelle, le framework a généré les métriques de vélocité suivantes :
+![Plugins](docs\Plugin_Update.jpg)
 
-- 🔴 **Vulnérabilités critiques totales :** 13
-- 🟢 **Failles éligibles à l'auto-patching (Axe 1) :** 13
-- 📊 **Taux d'absorption automatisé :** 100.0 %
-- ⏱️ **Vitesse de prise de décision :** 0.2005 secondes
+![Scan](docs/Start_detection.jpg)
+
+![Health](docs/Nessus_Health.png)
+
+### 🔹 Évaluation de l'Infrastructure  (`Lin-01`)
+Lors de l'exécution du pipeline sur notre infrastructure en production, le framework a généré les métriques de vélocité suivantes :
+
+![Scan](docs/reduction_du_MTTR.jpg)
 
 ### 🔹 Capture du Tableau de Bord Visuel
-*(Mets ici une capture d'écran de ton fichier `vulnops_dashboard.html` une fois ouvert sur ton navigateur)*
-`![Dashboard VulnOps](docs/dashboard_screenshot.png)`
+
 
 ## 🛠️ Installation & Configuration
 1. Clonez le dépôt.
@@ -81,13 +84,13 @@ Lors de l'exécution du pipeline sur notre infrastructure Linux réelle, le fram
 
 ## 📖 Documentation
 
-L'intelligence algorithmique et la logique de triage de ce framework s'appuient sur les standards et référentiels de sécurité internationaux suivants :
+L'intelligence algorithmique et la logique de triage de ce framework s'appuient sur les standards et référentiels de sécurité suivants :
 
-- **[Tenable Nessus API Documentation](https://tenable.com)** : Spécifications techniques des endpoints d'extraction des vulnérabilités en direct de la mémoire flash.
-- **[CISA KEV (Known Exploited Vulnerabilities)](https://cisa.gov)** : Base de connaissances utilisée pour isoler les failles activement exploitées dans la nature (Axe 3 - Incident Response).
-- **[FIRST CVSS v3.1/v4.0 Framework](https://first.org)** : Compréhension du calcul de sévérité environnementale et de la métrique brute de criticité.
-- **[FIRST EPSS (Exploit Prediction Scoring System)](https://first.org)** : Modèle de données centré sur la probabilité d'exploitation réelle, à la base de la philosophie de la *Patch Velocity*.
-- **[MITRE ATT&CK Framework](https://mitre.org)** : Cartographie des tactiques et techniques adverses utilisées pour qualifier les détections de malwares de l'Axe 3.
+- **[Tenable Nessus API Documentation](https://tenable.com)** 
+- **[CISA KEV (Known Exploited Vulnerabilities)](https://cisa.gov)** 
+- **[FIRST CVSS v3.1/v4.0 Framework](https://first.org)** 
+- **[FIRST EPSS (Exploit Prediction Scoring System)](https://first.org)** 
+- **[MITRE ATT&CK Framework](https://mitre.org)** 
 
 
 
