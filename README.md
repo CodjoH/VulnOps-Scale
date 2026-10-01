@@ -52,12 +52,20 @@ graph TD
     style G fill:#e74c3c,stroke:#c0392b,stroke-width:2px,color:#fff
 ```
 
-
+## 🛠️ Installation & Configuration
+1. Clonez le dépôt.
+2. Créez un fichier `.env` à la racine avec vos clés API Nessus :
+   ```env
+   NESSUS_ACCESS_KEY=votre_cle
+   NESSUS_SECRET_KEY=votre_cle
+   NESSUS_URL=https://localhost:8834
+   ```
+3. Lancez l'orchestrateur : `python3 vulnOps_automator.py
 
 ## 🔍 Preuve de Concept & Résultats 
 ![Nessus](docs/Tenable.login.jpg)
 
-![Plugins](docs\Plugin_Update.jpg)
+![Plugin](docs/Plugin_Update.jpg)
 
 ![Scan](docs/Start_detection.jpg)
 
@@ -67,20 +75,6 @@ graph TD
 Lors de l'exécution du pipeline sur notre infrastructure en production, le framework a généré les métriques de vélocité suivantes :
 
 ![Scan](docs/reduction_du_MTTR.jpg)
-
-### 🔹 Capture du Tableau de Bord Visuel
-
-
-## 🛠️ Installation & Configuration
-1. Clonez le dépôt.
-2. Créez un fichier `.env` à la racine avec vos clés API Nessus :
-   ```env
-   NESSUS_ACCESS_KEY=votre_cle
-   NESSUS_SECRET_KEY=votre_cle
-   NESSUS_URL=https://localhost:8834
-   ```
-3. Lancez l'orchestrateur : `python3 vulnOps_automator.py`
-
 
 ## 📖 Documentation
 
