@@ -65,16 +65,141 @@ graph TD
 ## 🔍 Preuve de Concept & Résultats 
 ![Nessus](docs/Tenable.login.jpg)
 
-![Plugin](docs/Plugin_Update.jpg)
-
 ![Scan](docs/Start_detection.jpg)
 
-![Health](docs/Nessus_Health.png)
+![Vulns_detectées](docs/Vulns_detectées.png)
 
 ### 🔹 Évaluation de l'Infrastructure  (`Lin-01`)
 Lors de l'exécution du pipeline sur notre infrastructure en production, le framework a généré les métriques de vélocité suivantes :
 
 ![Scan](docs/reduction_du_MTTR.jpg)
+
+
+
+### 🔹RESULTAT RESULTAT RESULTAT 
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évolution des Vulnérabilités - Lin-01</title>
+    <!-- Chargement de la bibliothèque Chart.js depuis un CDN -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .chart-container {
+            width: 80%;
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        h2 {
+            text-align: center;
+            color: #495057;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chart-container">
+    <h2>Critical, High, Medium, and Low</h2>
+    <canvas id="vulnChart"></canvas>
+</div>
+
+<script>
+    const ctx = document.getElementById('vulnChart').getContext('2d');
+    
+    const vulnChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Scan 1 (Initial)', 'Scan 2 (Post-Patch)'],
+            datasets: [
+                {
+                    label: 'Critical',
+                    data:,
+                    backgroundColor: 'rgba(197, 122, 122, 0.85)',
+                    borderColor: 'rgba(160, 90, 90, 1)',
+                    borderWidth: 1,
+                    fill: true
+                },
+                {
+                    label: 'High',
+                    data:,
+                    backgroundColor: 'rgba(243, 166, 166, 0.85)',
+                    borderColor: 'rgba(210, 130, 130, 1)',
+                    borderWidth: 1,
+                    fill: true
+                },
+                {
+                    label: 'Medium',
+                    data:,
+                    backgroundColor: 'rgba(255, 210, 157, 0.85)',
+                    borderColor: 'rgba(225, 180, 125, 1)',
+                    borderWidth: 1,
+                    fill: true
+                },
+                {
+                    label: 'Low',
+                    data:,
+                    backgroundColor: 'rgba(255, 243, 196, 0.85)',
+                    borderColor: 'rgba(230, 215, 160, 1)',
+                    borderWidth: 1,
+                    fill: true
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'right',
+                    labels: {
+                        // Inverse l'ordre de la légende pour avoir 'Low' en haut comme sur votre modèle
+                        reverse: true,
+                        usePointStyle: true,
+                        boxWidth: 10
+                    }
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                    stacked: true, // Active l'empilement
+                    min: 0,
+                    max: 18,
+                    ticks: {
+                        stepSize: 2
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
+
 
 ## 📖 Documentation
 
