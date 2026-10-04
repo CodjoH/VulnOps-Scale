@@ -63,12 +63,16 @@ graph TD
 3. Lancez l'orchestrateur : `python3 vulnOps_automator.py
 
 ## 🔍 Preuve de Concept & Résultats 
+
 <p align="center">
   <img src="docs/Tenable.login.jpg" width="700">
 </p>
 
+### 🔹Scan
 
 ![Scan](docs/Start_detection.jpg)
+
+### 🔹Vulnerabilités detectées
 
 ![Vulns_detectées](docs/Vulns_detectées.png)
 
@@ -79,7 +83,7 @@ Lors de l'exécution du pipeline sur notre infrastructure en production, le fram
 
 
 
-### 🔹RESULTAT RESULTAT RESULTAT 
+### 🔹RESULTAT 
 
 ![Scan](docs/view_vulns.jpg)
 
